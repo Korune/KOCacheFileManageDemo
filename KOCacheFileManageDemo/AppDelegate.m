@@ -55,10 +55,7 @@
     
     // 判断缓存文件大小是否超过最大缓存文件大小
     NSLog(@"%@", NSTemporaryDirectory());
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        [cacheFileManager handleCacheFileOverSize];
-    });
+    [cacheFileManager handleCacheFileOverSize];
     
     return YES;
 }
