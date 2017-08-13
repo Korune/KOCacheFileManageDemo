@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D06ADF41F402984007F4565 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5D06ADF31F402984007F4565 /* README.md */; };
-		5D1154071F3A0430001DFDCC /* KOCacheFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1154041F3A0430001DFDCC /* KOCacheFile.m */; };
-		5D1154081F3A0430001DFDCC /* KOCacheFileManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1154061F3A0430001DFDCC /* KOCacheFileManger.m */; };
+		5D06ADFA1F403729007F4565 /* KOCacheFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D06ADF71F403729007F4565 /* KOCacheFile.m */; };
+		5D06ADFB1F403729007F4565 /* KOCacheFileManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D06ADF91F403729007F4565 /* KOCacheFileManger.m */; };
 		5DD343F71F370F84006A1EEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD343F61F370F84006A1EEC /* main.m */; };
 		5DD343FA1F370F84006A1EEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD343F91F370F84006A1EEC /* AppDelegate.m */; };
 		5DD343FD1F370F84006A1EEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD343FC1F370F84006A1EEC /* ViewController.m */; };
@@ -64,10 +64,10 @@
 
 /* Begin PBXFileReference section */
 		5D06ADF31F402984007F4565 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		5D1154031F3A0430001DFDCC /* KOCacheFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOCacheFile.h; sourceTree = "<group>"; };
-		5D1154041F3A0430001DFDCC /* KOCacheFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOCacheFile.m; sourceTree = "<group>"; };
-		5D1154051F3A0430001DFDCC /* KOCacheFileManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOCacheFileManger.h; sourceTree = "<group>"; };
-		5D1154061F3A0430001DFDCC /* KOCacheFileManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOCacheFileManger.m; sourceTree = "<group>"; };
+		5D06ADF61F403729007F4565 /* KOCacheFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOCacheFile.h; sourceTree = "<group>"; };
+		5D06ADF71F403729007F4565 /* KOCacheFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOCacheFile.m; sourceTree = "<group>"; };
+		5D06ADF81F403729007F4565 /* KOCacheFileManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KOCacheFileManger.h; sourceTree = "<group>"; };
+		5D06ADF91F403729007F4565 /* KOCacheFileManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KOCacheFileManger.m; sourceTree = "<group>"; };
 		5DD343F21F370F84006A1EEC /* KOCacheFileManageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOCacheFileManageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD343F61F370F84006A1EEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DD343F81F370F84006A1EEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,15 +136,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D1154021F3A0430001DFDCC /* CacheFileMange */ = {
+		5D06ADF51F403729007F4565 /* CacheFileManage */ = {
 			isa = PBXGroup;
 			children = (
-				5D1154031F3A0430001DFDCC /* KOCacheFile.h */,
-				5D1154041F3A0430001DFDCC /* KOCacheFile.m */,
-				5D1154051F3A0430001DFDCC /* KOCacheFileManger.h */,
-				5D1154061F3A0430001DFDCC /* KOCacheFileManger.m */,
+				5D06ADF61F403729007F4565 /* KOCacheFile.h */,
+				5D06ADF71F403729007F4565 /* KOCacheFile.m */,
+				5D06ADF81F403729007F4565 /* KOCacheFileManger.h */,
+				5D06ADF91F403729007F4565 /* KOCacheFileManger.m */,
 			);
-			path = CacheFileMange;
+			path = CacheFileManage;
 			sourceTree = "<group>";
 		};
 		5DD343E91F370F83006A1EEC = {
@@ -170,11 +170,11 @@
 		5DD343F41F370F84006A1EEC /* KOCacheFileManageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5D06ADF51F403729007F4565 /* CacheFileManage */,
 				5D06ADF31F402984007F4565 /* README.md */,
 				5DD343F81F370F84006A1EEC /* AppDelegate.h */,
 				5DD343F91F370F84006A1EEC /* AppDelegate.m */,
 				5DD344011F370F84006A1EEC /* Assets.xcassets */,
-				5D1154021F3A0430001DFDCC /* CacheFileMange */,
 				5DD407DD1F377DE20077CE56 /* Images */,
 				5DD344031F370F84006A1EEC /* LaunchScreen.storyboard */,
 				5DD343FE1F370F84006A1EEC /* Main.storyboard */,
@@ -404,11 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D06ADF41F402984007F4565 /* README.md in Sources */,
-				5D1154081F3A0430001DFDCC /* KOCacheFileManger.m in Sources */,
 				5DD343FD1F370F84006A1EEC /* ViewController.m in Sources */,
+				5D06ADFB1F403729007F4565 /* KOCacheFileManger.m in Sources */,
 				5DD343FA1F370F84006A1EEC /* AppDelegate.m in Sources */,
-				5D1154071F3A0430001DFDCC /* KOCacheFile.m in Sources */,
 				5DD343F71F370F84006A1EEC /* main.m in Sources */,
+				5D06ADFA1F403729007F4565 /* KOCacheFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
