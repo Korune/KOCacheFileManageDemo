@@ -7,3 +7,24 @@
 ## 实现思路
 1. 使用 `KOCacheFile` 模型保存文件信息。
 2. 使用 `NSMutableSet` 来判断保存的文件是否重复、存在。
+
+## API 的使用
+使用 `KOCacheFileManger` 的下列方法：
+```objc
++ (KOCacheFileManger *)sharedManger;
+
+- (void)handleCacheFileOverSize;
+
+- (void)saveCachePhotoInfo:(KOCacheFile *)cachePhoto
+success:(void(^)())success
+failure:(void(^)())failure;
+
+- (void)deleteCachePhotoInfo:(KOCacheFile *)cachePhoto
+success:(void(^)())success
+failure:(void(^)())failure;
+
+```
+
+## 备注
+如果只在 App 启动的时候，进行文件缓存管理。那么 `KOCacheFileManger` 可以不写成单例类，可以删除 `- (void)saveCachePhotoInfo: success: failure:` 和 `- (void)deleteCachePhotoInfo: success: failure:` 两个方法，其他进行细节修改即可。
+
