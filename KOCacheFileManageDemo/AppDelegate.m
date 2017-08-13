@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "KOCacheFileManger.h"
+#import "KOCacheFile.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,48 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 写入文件
+    
+    NSLog(@"App 启动了，将写入缓存图片");
+    KOCacheFileManger *cacheFileManager = [KOCacheFileManger sharedManger];
+    
+    for(int i = 1; i < 26; i ++) {
+        
+        NSString *fileName = [NSString stringWithFormat:@"%d.jpg", i];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        [NSThread sleepForTimeInterval:0.5];
+        
+        NSString *savedFileName = [NSString stringWithFormat:@"%d.jpg", i];
+        NSString *savedFilePath = [cacheFileManager.photoCachePath stringByAppendingPathComponent:savedFileName];
+        BOOL isWriteSuccess = [data writeToFile:savedFilePath atomically:YES];
+        if (!isWriteSuccess) {
+            NSLog(@"写入文件 %@ 失败！", fileName);
+        }
+        
+        // 加载 Assets.xcassets 里的图片，由于使用了 UIImageJPEGRepresentation 函数，导致写入后的图片所占存储空间变大
+//        NSString *fileName = [NSString stringWithFormat:@"%d-1.jpg", i];
+//        UIImage *image = [UIImage imageNamed:fileName];
+//        NSData *data = UIImageJPEGRepresentation(image, 1.0);
+//        [NSThread sleepForTimeInterval:0.1];
+//        
+//        NSString *savedFileName = [NSString stringWithFormat:@"%d-1.jpg", i];
+//        NSString *savedFilePath = [cacheFileManager.photoCachePath stringByAppendingPathComponent:savedFileName];
+//        BOOL isWriteSuccess = [data writeToFile:savedFilePath atomically:YES];
+//        if (!isWriteSuccess) {
+//            NSLog(@"%s 写入文件 %@ 失败！", __FUNCTION__, fileName);
+//        }
+    }
+    NSLog(@"缓存图片写入完成");
+    
+    // 判断缓存文件大小是否超过最大缓存文件大小
+    NSLog(@"%@", NSTemporaryDirectory());
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        [cacheFileManager handleCacheFileOverSize];
+    });
+    
     return YES;
 }
 
